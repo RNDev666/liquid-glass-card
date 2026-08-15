@@ -1,3 +1,6 @@
+/** The one profile this site is about. */
+export const GITHUB_USERNAME = "RNDev666";
+
 export type GithubProfile = {
   name: string;
   handle: string;

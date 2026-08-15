@@ -1,11 +1,9 @@
 import { GlassCard } from "@/components/GlassCard/GlassCard";
 import { ProfileCard } from "@/components/ProfileCard/ProfileCard";
-import { getGithubProfile } from "@/lib/github";
-
-const USERNAME = "RNDev666";
+import { GITHUB_USERNAME, getGithubProfile } from "@/lib/github";
 
 export default async function Home() {
-  const profile = await getGithubProfile(USERNAME);
+  const profile = await getGithubProfile(GITHUB_USERNAME);
 
   return (
     <GlassCard>
