@@ -1,14 +1,6 @@
 import Image from "next/image";
+import type { GithubProfile } from "@/lib/github";
 import styles from "./ProfileCard.module.css";
-
-export type GithubProfile = {
-  name: string;
-  handle: string;
-  avatarUrl: string;
-  profileUrl: string;
-  repos: number;
-  followers: number;
-};
 
 /** GitHub profile summary, meant to be dropped inside a GlassCard. */
 export function ProfileCard({ profile }: { profile: GithubProfile }) {

@@ -1,16 +1,12 @@
 import { GlassCard } from "@/components/GlassCard/GlassCard";
-import { ProfileCard, type GithubProfile } from "@/components/ProfileCard/ProfileCard";
+import { ProfileCard } from "@/components/ProfileCard/ProfileCard";
+import { getGithubProfile } from "@/lib/github";
 
-const profile: GithubProfile = {
-  name: "Abdughafur",
-  handle: "Abdughafur",
-  avatarUrl: "https://avatars.githubusercontent.com/u/215494004?v=4",
-  profileUrl: "https://github.com/Abdughafur/",
-  repos: 10,
-  followers: 2,
-};
+const USERNAME = "Abdughafur";
 
-export default function Home() {
+export default async function Home() {
+  const profile = await getGithubProfile(USERNAME);
+
   return (
     <GlassCard>
       <ProfileCard profile={profile} />

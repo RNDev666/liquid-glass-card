@@ -6,8 +6,9 @@
   --scale-boost: 0;
 
   position: relative;
-  width: 273px;
-  min-height: 310px;
+  /* Sized by its content, bounded so short and long names both stay readable. */
+  min-width: 220px;
+  max-width: 340px;
   padding: 33px;
   border-radius: 28px;
   isolation: isolate;
@@ -83,7 +84,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
   color: #fff;
   text-align: center;
 }

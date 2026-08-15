@@ -31,6 +31,7 @@
   font-family: var(--font-mono);
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.75);
+  overflow-wrap: anywhere;
   pointer-events: none;
 }
 
