@@ -8,6 +8,9 @@ export type GithubProfile = {
   profileUrl: string;
   repos: number;
   followers: number;
+  bio: string | null;
+  location: string | null;
+  joinedAt: string;
 };
 
 /** Subset of https://docs.github.com/rest/users/users#get-a-user we rely on. */
@@ -18,6 +21,9 @@ type GithubUserResponse = {
   html_url: string;
   public_repos: number;
   followers: number;
+  bio: string | null;
+  location: string | null;
+  created_at: string;
 };
 
 /**
@@ -45,5 +51,8 @@ export async function getGithubProfile(username: string): Promise<GithubProfile>
     profileUrl: user.html_url,
     repos: user.public_repos,
     followers: user.followers,
+    bio: user.bio,
+    location: user.location,
+    joinedAt: user.created_at,
   };
 }

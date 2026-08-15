@@ -19,20 +19,23 @@ export function ProfileCard({ profile }: { profile: GithubProfile }) {
       <h2 className={styles.name}>{profile.name}</h2>
       <p className={styles.handle}>@{profile.handle}</p>
 
-      <div className={styles.stats}>
-        <Stat value={profile.repos} label="Repos" />
-        <Stat value={profile.followers} label="Followers" />
-      </div>
+      {/* Stats stay out of the layout until the follow button is hovered or focused. */}
+      <div className={styles.follow}>
+        <a
+          className={styles.followButton}
+          href={profile.profileUrl}
+          target="_blank"
+          rel="noreferrer"
+        >
+          <GithubIcon />
+          Follow
+        </a>
 
-      <a
-        className={styles.followButton}
-        href={profile.profileUrl}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <GithubIcon />
-        Follow
-      </a>
+        <div className={styles.stats}>
+          <Stat value={profile.repos} label="Repos" />
+          <Stat value={profile.followers} label="Followers" />
+        </div>
+      </div>
     </>
   );
 }
