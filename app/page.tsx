@@ -1,4 +1,5 @@
-import { GlassCard, type GithubProfile } from "@/components/GlassCard/GlassCard";
+import { GlassCard } from "@/components/GlassCard/GlassCard";
+import { ProfileCard, type GithubProfile } from "@/components/ProfileCard/ProfileCard";
 
 const profile: GithubProfile = {
   name: "Abdughafur",
@@ -10,5 +11,9 @@ const profile: GithubProfile = {
 };
 
 export default function Home() {
-  return <GlassCard profile={profile} />;
+  return (
+    <GlassCard>
+      <ProfileCard profile={profile} />
+    </GlassCard>
+  );
 }
