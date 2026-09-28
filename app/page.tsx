@@ -1,25 +1,13 @@
-import { AboutCard } from "@/components/AboutCard/AboutCard";
 import { GlassCard } from "@/components/GlassCard/GlassCard";
 import { ProfileCard } from "@/components/ProfileCard/ProfileCard";
-import { ProjectsCard } from "@/components/ProjectsCard/ProjectsCard";
 import { GITHUB_USERNAME, getGithubProfile } from "@/lib/github";
 
 export default async function Home() {
   const profile = await getGithubProfile(GITHUB_USERNAME);
 
   return (
-    <>
-      <GlassCard>
-        <ProfileCard profile={profile} />
-      </GlassCard>
-
-      <GlassCard>
-        <AboutCard profile={profile} />
-      </GlassCard>
-
-      <GlassCard>
-        <ProjectsCard />
-      </GlassCard>
-    </>
+    <GlassCard>
+      <ProfileCard profile={profile} />
+    </GlassCard>
   );
 }

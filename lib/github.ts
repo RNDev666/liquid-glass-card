@@ -1,4 +1,4 @@
-/** The one profile this site is about. */
+/** The profile the demo card displays. */
 export const GITHUB_USERNAME = "RNDev666";
 
 export type GithubProfile = {
