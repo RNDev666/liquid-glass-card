@@ -27,13 +27,12 @@ type GithubUserResponse = {
 };
 
 /**
- * Fetches a public GitHub profile. Revalidated hourly, which also keeps us well
- * inside the unauthenticated rate limit of 60 requests per hour.
+ * Fetches a public GitHub profile. The site is a static export, so this runs
+ * once per build and the numbers are as fresh as the last deploy.
  */
 export async function getGithubProfile(username: string): Promise<GithubProfile> {
   const response = await fetch(`https://api.github.com/users/${username}`, {
     headers: { Accept: "application/vnd.github+json" },
-    next: { revalidate: 3600 },
   });
 
   if (!response.ok) {

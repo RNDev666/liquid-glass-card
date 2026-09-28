@@ -8,8 +8,8 @@ export async function generateMetadata(): Promise<Metadata> {
   const { avatarUrl } = await getGithubProfile(GITHUB_USERNAME);
 
   return {
-    title: "Liquid Glass Card",
-    description: "Demo: a draggable liquid-glass card rendering a live GitHub profile",
+    title: "Liquid Glass Cards",
+    description: "Demo of draggable, resizable liquid-glass cards built with CSS and SVG filters",
     // s=64 asks GitHub for a favicon-sized avatar instead of the full one.
     icons: { icon: `${avatarUrl}&s=64` },
   };

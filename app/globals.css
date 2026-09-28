@@ -17,7 +17,9 @@ body {
   align-items: center;
   justify-content: center;
   gap: 28px;
-  overflow: hidden;
+  padding: 28px 16px;
+  /* Cards dragged sideways shouldn't add a scrollbar; narrow screens still scroll down. */
+  overflow-x: hidden;
   user-select: none;
   font-family: var(--font-sans);
   background: var(--page-background) center / cover no-repeat;
