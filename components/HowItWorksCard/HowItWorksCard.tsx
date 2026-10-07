@@ -1,6 +1,7 @@
 import styles from "./HowItWorksCard.module.css";
 
 const REPO_URL = "https://github.com/RNDev666/liquid-glass-card";
+const KOFI_URL = "https://ko-fi.com/rndev666";
 
 /** Tells visitors what to try, and how the effect is made. */
 export function HowItWorksCard() {
@@ -17,9 +18,14 @@ export function HowItWorksCard() {
         </li>
       </ul>
 
-      <a className={styles.link} href={REPO_URL} target="_blank" rel="noreferrer">
-        View source
-      </a>
+      <div className={styles.links}>
+        <a className={styles.link} href={REPO_URL} target="_blank" rel="noreferrer">
+          View source
+        </a>
+        <a className={styles.link} href={KOFI_URL} target="_blank" rel="noreferrer">
+          Support on Ko-fi
+        </a>
+      </div>
     </>
   );
 }
